@@ -3,22 +3,58 @@ package br.senai.sp.jandira.model;
 public class Conta {
 	
 	public String tipo;
-	public String numero;
+	private String numero;
 	public String numeroAgencia;
 	public String titular;
-	public double saldo;
+    private double saldo;
+    
+       //metedo conStrutor, tem o padrao já, mas se eu criar o java vai usar oq construtor que eu criei 
+      // oq é o construtor? = " NEW " (padrão) = construtor, porem eu criei esse construitor esse metodo para construir do meu jeito
+    
+    public Conta(String numeroconta) {
+    	numero = numeroconta;
+    }
 	
 	public void depositar(double valorDeposito) {
-		saldo += valorDeposito;
-	}
-	
-	public void sacar(double valorSaque) {
-		saldo -= valorSaque;
-	}
-	
-	public void transferir() {
 		
+		if(valorDeposito<=0) {
+			System.out.println("Valor incorreto,não foi possivel despositar esse valor !");
+		}else {
+			
+		    saldo += valorDeposito;
+		}
 	}
+	
+	
+	public boolean sacar(double valorSaque) {
+		
+		if(valorSaque<=0) {
+			System.out.print("OPS,VALOR INCORRETO ! IMPOSSIVEL SACAR ESSA QUANTIA");
+			return false;
+			
+		}else if(valorSaque > saldo){
+			System.out.print("saldo insuficiente");
+			
+			return false;	
+		}else {
+				
+			saldo -= valorSaque;	
+			return true;
+		}
+	}
+	
+	
+	public void transferir(Conta contadestino, double valortransferir) {
+		
+			boolean resultado = sacar(valortransferir);
+			if(resultado) {
+				contadestino.depositar(valortransferir);
+			}else {
+				System.out.println("erro ! não foi possivel transferir");
+			}
+			
+		}
+		
 	
 	public void exibirDetalhes() {
 		System.out.println();
