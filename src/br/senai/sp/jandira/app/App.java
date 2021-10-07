@@ -11,11 +11,11 @@ public class App {
 		
 		// Criação da conta da Maria   //criar cliente maria! //criar class agencia + conta new agencia
 		
-		Agencia AgenciaMaria = new Agencia();
-		AgenciaMaria.setNomegerentedaAgencia("CLEITO");
-		AgenciaMaria.setNumeroAgencia("8214-9");
-		AgenciaMaria.settelefonedaAgencia("(11)98555555");
-		AgenciaMaria.setcidadedaAgencia("Jandira");
+		Agencia agencia = new Agencia();
+		agencia.setNomegerentedaAgencia("CLEITO");
+		agencia.setNumeroAgencia("8214-9");
+		agencia.settelefonedaAgencia("(11)98555555");
+		agencia.setcidadedaAgencia("Jandira");
 		///////////////////////////////////
 		Cliente clienteMaria = new Cliente();
 	    clienteMaria.setNome("Maria");
@@ -24,7 +24,7 @@ public class App {
 		////////////////////////////////
 		Conta contaMaria = new Conta("7845-8");
 		contaMaria.Setcliente(clienteMaria);
-		contaMaria.setAgencia(AgenciaMaria);
+		contaMaria.setAgencia(agencia);
 		contaMaria.depositar(500); 
 		contaMaria.setTipo(TipoContaList.CORRENTE);
 		contaMaria.Setcliente(clienteMaria);
@@ -39,10 +39,9 @@ public class App {
 		///////////////////////////////////
 		Conta contaPedro = new Conta("6547-6");
 		contaPedro.Setcliente(clientePedro); 
-		contaPedro.setnumeroAgencia);
+		contaPedro.setAgencia(agencia);
 		contaPedro.depositar(300);
 		contaPedro.setTipo(TipoContaList.POUPANÇA); 
-		contaPedro.setnumeroAgencia("7867-9");
 
 		
 		
@@ -54,10 +53,9 @@ public class App {
 	/////////////////////////////////////////
 		Conta contaAna = new Conta("23145-9");
 		contaAna.Setcliente(clienteAna);
-		contaAna.setnumeroAgencia("8214-9");
+		contaAna.setAgencia(agencia);
 		contaAna.depositar(2000);
-		contaAna.setTipo(TipoContaList.SALARIO); 
-		contaAna.setnumeroAgencia("5214-9");
+		contaAna.setTipo(TipoContaList.SALARIO);
 		
 		
 		
