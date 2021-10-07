@@ -1,14 +1,17 @@
 package br.senai.sp.jandira.model;
 
+import br.senai.sp.jandira.model.Cliente;
 
 import br.senai.sp.jandira.lista.TipoContaList;
+
+import br.senai.sp.jandira.model.Agencia;
 
 public class Conta {
 	
 	private TipoContaList tipo;
 	private String numero;
-	private String numeroAgencia;
-	public String titular;
+	private Agencia agencia;
+	private Cliente cliente; //cliente cliente 
     private double saldo;
     
     
@@ -34,13 +37,24 @@ public class Conta {
      }
      
      
-     public void setnumeroAgencia(String numeroAgencia) {
-    	 this.numeroAgencia = numeroAgencia;
+     public void setAgencia(Agencia Agencia) {
+    	 this.agencia = Agencia;
       }
      
-     public String getNumeroAgencia() {
-    	 return numeroAgencia;
+     public Agencia getAgencia() {
+    	 return agencia;
     	 
+     }
+     
+     public void Setcliente(Cliente cliente) {
+    	 this.cliente = cliente;
+    	 
+    	 
+     }
+     
+     public Cliente getcliente() {
+    	 
+    	 return cliente;
      }
      
 	
@@ -89,9 +103,9 @@ public class Conta {
 	public void exibirDetalhes() {
 		System.out.println();
 		System.out.println("---------------------");
-		System.out.printf("Titular: %s\n", titular);
+		System.out.printf("Titular: %s\n", cliente.getNome());
 		System.out.printf("Número: %s\n", numero);
-		System.out.printf("Agência: %s\n", numeroAgencia);
+		System.out.printf("Agência: %s\n", agencia);
 		System.out.printf("Tipo: %s\n", tipo);   //ordinal = por ordem de numeros(numericas) 
 		System.out.printf("Saldo: %s\n", saldo);
 	}

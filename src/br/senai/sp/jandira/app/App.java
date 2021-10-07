@@ -1,36 +1,64 @@
 package br.senai.sp.jandira.app;
 
 import br.senai.sp.jandira.lista.TipoContaList;
-
+import br.senai.sp.jandira.model.Cliente;
 import br.senai.sp.jandira.model.Conta;
+import br.senai.sp.jandira.model.Agencia;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-		// Criação da conta da Maria
+		// Criação da conta da Maria   //criar cliente maria! //criar class agencia + conta new agencia
+		
+		Agencia AgenciaMaria = new Agencia();
+		AgenciaMaria.setNomegerentedaAgencia("CLEITO");
+		AgenciaMaria.setNumeroAgencia("8214-9");
+		AgenciaMaria.settelefonedaAgencia("(11)98555555");
+		AgenciaMaria.setcidadedaAgencia("Jandira");
+		///////////////////////////////////
+		Cliente clienteMaria = new Cliente();
+	    clienteMaria.setNome("Maria");
+	    clienteMaria.Setemail("maria@gmail.com");
+	    clienteMaria.setsalario(1000);
+		////////////////////////////////
 		Conta contaMaria = new Conta("7845-8");
-		contaMaria.titular = "Maria Antonieta";
-		contaMaria.setnumeroAgencia("8214-9");
+		contaMaria.Setcliente(clienteMaria);
+		contaMaria.setAgencia(AgenciaMaria);
 		contaMaria.depositar(500); 
-		contaMaria.setTipo(TipoContaList.CORRENTE); 
+		contaMaria.setTipo(TipoContaList.CORRENTE);
+		contaMaria.Setcliente(clienteMaria);
 		
        		
 		
 		// Criação da conta do Pedro
+		Cliente clientePedro = new Cliente();
+	    clientePedro.setNome("Pedro");
+	    clientePedro.Setemail("Pedro@gmail.com");
+	    clientePedro.setsalario(2000);
+		///////////////////////////////////
 		Conta contaPedro = new Conta("6547-6");
-		contaPedro.titular = "Pedro Cabral";
+		contaPedro.Setcliente(clientePedro); 
+		contaPedro.setnumeroAgencia);
 		contaPedro.depositar(300);
 		contaPedro.setTipo(TipoContaList.POUPANÇA); 
 		contaPedro.setnumeroAgencia("7867-9");
+
 		
 		
 		// Criação da conta da Ana
+		Cliente clienteAna = new Cliente();
+	    clienteAna.setNome("Ana");
+	    clienteAna.Setemail("Ana@gmail.com");
+	    clienteAna.setsalario(3000);
+	/////////////////////////////////////////
 		Conta contaAna = new Conta("23145-9");
-		contaAna.titular = "Ana Gomes";
+		contaAna.Setcliente(clienteAna);
+		contaAna.setnumeroAgencia("8214-9");
 		contaAna.depositar(2000);
 		contaAna.setTipo(TipoContaList.SALARIO); 
 		contaAna.setnumeroAgencia("5214-9");
+		
 		
 		
 		// Exibir os detalhes das contas
